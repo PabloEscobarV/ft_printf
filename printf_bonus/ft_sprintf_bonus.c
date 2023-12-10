@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 16:59:10 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:54:49 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <limits.h>
-#include <stdio.h>
 
 char	*crt_strlst(t_list *list)
 {
@@ -32,15 +31,13 @@ char	*crt_strlst(t_list *list)
 	return (tmp);
 }
 
-t_data	*setdata(t_list *list, const char *str, char *s)
+t_data	*setdata(t_list *list, char *s)
 {
 	t_data	*data;
 	t_ui	count;
 
 	data = t_datacrt(s, 0);
 	if (!data)
-		return (NULL);
-	if (!str)
 		return (NULL);
 	count = 0;
 	while (list)
@@ -65,7 +62,9 @@ t_data	*lst_tostr(const char *str, va_list arg)
 		return (ft_strdup_wch(str, DEV));
 	list = str_tolst(str, count, arg);
 	s = crt_strlst(list);
-	data = setdata(list, str, s);
+	if (!s)
+		return (error_memaloc(list, &delt_data));
+	data = setdata(list, s);
 	ft_lstclear(&list, &delt_data);
 	return (data);
 }

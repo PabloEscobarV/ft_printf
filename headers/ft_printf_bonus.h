@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:00:10 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:57:34 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int			ft_printf(const char *spec, ...);
 t_data		*lst_tostr(const char *str, va_list arg);
 t_list		*str_tolst(const char *str, int count, va_list arg);
 void		delt_data(void *ptr);
+void		*error_memaloc(t_list *list, void (*del)(void *));
 //////////////////////////////////////STRING//////////////////////////////////
 t_data		*t_datacrt(char *str, int countzerro);
-void		delt_data(void *ptr);
 //////////////////////////////////////STRING//////////////////////////////////
 t_data  	*chartostr(const char ch, const char *spec);
 t_data		*tostr_mod(const char *str, const char *spec);
@@ -69,7 +69,6 @@ char		*strjoinfree(char *s1, char *s2, int pos);
 char		*ft_strcpy(char *dest, const char *src);
 char		*emptystr(char ch);
 char		*modstr_crt(t_mod *mod, int size, char ch);
-const char	*error(const char *str);
 t_data		*str_tostr(const char *start, const char *end, const char dev);
 t_data		*retres_fin(t_mod *mod, t_data *data, char *s1, char *s2);
 //////////////////////////////////////NUMBER//////////////////////////////////

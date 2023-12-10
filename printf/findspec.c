@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   findspec.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:12:38 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:47:42 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:43:46 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "../headers/ft_printf.h"
+#include <stdlib.h>
 
 const char	*find_mod(const char *str, const char *spec)
 {

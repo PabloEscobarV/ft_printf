@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floattostr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:47:48 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:48:23 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 char	*p_float(double n, const char *base, char *str, double count)
 {
-	int			size;
 	static int	t = 1;
+	int			size;
 
 	size = ft_strlen(base);
 	n *= size;
@@ -31,6 +31,7 @@ char	*p_float(double n, const char *base, char *str, double count)
 	{
 		*str = base[(int)n];
 		*(str + 1) = '\0';
+		t = 1;
 		return (str);
 	}
 	*str = base[(long)n % size];
@@ -38,30 +39,30 @@ char	*p_float(double n, const char *base, char *str, double count)
 	return (str);
 }
 
-const char	*float_tostr_base(double n, const char *base, t_ui maxn)
+char	*float_tostr_base(double n, const char *base, t_ui maxn)
 {
 	char	*num_int;
 	char	*num_float;
 
 	num_int = int_tostr_base((long)n, base);
 	if (!num_int)
-		return (ERROR_BDA);
+		return (NULL);
 	if (maxn < 1)
 		return (num_int);
 	num_float = ft_calloc(maxn, sizeof(char));
 	if (!num_float)
-		return (ERROR_BDA);
+		return (NULL);
 	ft_memset(num_float, SPEC[ZERO], maxn);
 	p_float(n - (long)n, base, num_float, maxn);
-	return (ft_strjoin_free(num_int, num_float, 2));
+	return (strjoinfree(num_int, num_float, 2));
 }
 
-const char	*float_tostr(double n, const char *spec, const char *base, t_ui m)
+t_data	*float_tostr(double n, const char *spec, const char *base, t_ui m)
 {
-	char	*tmp;
+	t_data	*num;
 
-	tmp = (char *)spec;
-	++tmp;
-	--tmp;
-	return (float_tostr_base(n, base, m));
+	num = t_datacrt(float_tostr_base(n, base, m), 0);
+	if (!num)
+		return (NULL);
+	return (num);
 }

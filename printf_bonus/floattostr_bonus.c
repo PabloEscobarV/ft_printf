@@ -6,14 +6,13 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 16:43:32 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:45:59 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdlib.h>
 #include <limits.h>
-#include <stdio.h>
 
 char	*p_float(double n, const char *base, char *str, double count)
 {
