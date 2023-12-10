@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:48:44 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 16:52:27 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:22:59 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*uint_tostr_base(t_ul n, const char *base)
 
 	str = crtnumstr_ul(n, base);
 	if (!str)
-		return ((char *)error(ERROR_BDA));
+		return (NULL);
 	base_s = ft_strlen(base);
 	p_rec(n, base, str, base_s);
 	return (str);

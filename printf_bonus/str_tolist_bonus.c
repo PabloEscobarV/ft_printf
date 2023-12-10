@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 23:10:14 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:34:36 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdint.h>
 #include <limits.h>
 #include <stdio.h>
+
+void	*error_memaloc(t_list *list, void (*del)(void *))
+{
+	ft_lstclear(&list, del);
+	return (NULL);
+}
 
 t_data	*write_chrs(const char *spec, va_list arg)
 {
@@ -69,6 +75,8 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 		spec = find_spec(str);
 		list->content = str_tostr(str, spec, DEV);
 		s_tmp = write_data(spec, arg);
+		if (!s_tmp)
+			return (error_memaloc(list, &delt_data));
 		list->next = ft_lstnew(s_tmp);
 		list->next->next = ft_lstnew(NULL);
 		list = list->next->next;

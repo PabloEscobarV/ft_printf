@@ -6,12 +6,11 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 16:56:27 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:18:22 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
-#include <stdio.h>
 
 const char	*findstart(const char *spc)
 {

@@ -6,14 +6,13 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:41:52 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 16:58:49 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:21:24 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdlib.h>
 #include <limits.h>
-#include <stdio.h>
 
 char	*int_tostr_base(long n, const char *base)
 {
@@ -23,7 +22,7 @@ char	*int_tostr_base(long n, const char *base)
 
 	str = crtnumstr(n, base);
 	if (!str)
-		return ((char *)error(ERROR_BDA));
+		return (NULL);
 	base_s = ft_strlen(base);
 	if (n < 0)
 	{
