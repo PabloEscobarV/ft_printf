@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inttostr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:41:52 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:48:11 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:07:34 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*int_tostr_base(long n, const char *base)
 
 	str = crtnumstr(n, base);
 	if (!str)
-		return ((char *)error(ERROR_BDA));
+		return (NULL);
 	base_s = ft_strlen(base);
 	if (n < 0)
 	{
@@ -37,35 +37,11 @@ char	*int_tostr_base(long n, const char *base)
 	return (str);
 }
 
-char	*uint_tostr_base(t_ul n, const char *base)
-{
-	char	*str;
-	t_ui	base_s;
-
-	str = crtnumstr_ul(n, base);
-	if (!str)
-		return ((char *)error(ERROR_BDA));
-	base_s = ft_strlen(base);
-	p_rec(n, base, str, base_s);
-	return (str);
-}
-
-const char	*int_tostr(long n, const char *spec, const char *base)
+t_data	*int_tostr(long n, const char *spec, const char *base)
 {
 	char	*tmp;
 
-	tmp = (char *)spec;
+	tmp = spec;
 	++tmp;
-	--tmp;
-	return (int_tostr_base(n, base));
-}
-
-const char	*uint_tostr(t_ul n, const char *spec, const char *base)
-{
-	char	*tmp;
-
-	tmp = (char *)spec;
-	++tmp;
-	--tmp;
-	return (uint_tostr_base(n, base));
+	return (t_datacrt(int_tostr_base(n, base), 0));
 }

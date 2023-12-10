@@ -6,13 +6,12 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:09:37 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:05:48 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 char	*hexint_mod(t_mod *mod, char *str, const char *base, const char *p_h)
 {

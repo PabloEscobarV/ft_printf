@@ -6,13 +6,12 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:29:49 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/08 23:24:57 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:08:41 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 size_t	ft_strlen_wch(const char *str, char end, const char ch)
 {

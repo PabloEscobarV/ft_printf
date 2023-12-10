@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_tolist.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:48:28 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:09:39 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,17 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <limits.h>
-#include <stdio.h>
 
-const char	*write_chrs(const char *spec, va_list arg)
+void	*error_memaloc(t_list *list, void (*del)(void *))
 {
-	char		*ch;
-	const char	*ret;
+	ft_lstclear(&list, del);
+	return (NULL);
+}
 
+t_data	*write_chrs(const char *spec, va_list arg)
+{
 	if (*spec == 'c')
-	{
-		ch = emptystr(va_arg(arg, int));
-		ret = tostr_mod(ch, spec);
-		free(ch);
-		return (ret);
-	}
+		return (chartostr(va_arg(arg, int), spec));
 	if (*spec == 's')
 		return (tostr_mod(va_arg(arg, char *), spec));
 	if (*spec == 'p')
@@ -36,7 +33,7 @@ const char	*write_chrs(const char *spec, va_list arg)
 	return (NULL);
 }
 
-const char	*write_digit(const char *spec, va_list arg)
+t_data	*write_digit(const char *spec, va_list arg)
 {
 	if (*spec == 'd')
 		return (int_tostr(va_arg(arg, int), spec, DEC));
@@ -53,9 +50,9 @@ const char	*write_digit(const char *spec, va_list arg)
 	return (NULL);
 }
 
-const char	*write_data(const char *spec, va_list arg)
+t_data	*write_data(const char *spec, va_list arg)
 {
-	const char	*tmp;
+	t_data	*tmp;
 
 	tmp = write_chrs(spec, arg);
 	if (tmp)
@@ -68,7 +65,7 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 	t_list		*list;
 	t_list		*lst_tmp;
 	const char	*spec;
-	const char	*s_tmp;
+	t_data		*s_tmp;
 
 	list = ft_lstnew(NULL);
 	lst_tmp = list;
@@ -77,7 +74,9 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 		spec = find_spec(str);
 		list->content = str_tostr(str, spec, DEV);
 		s_tmp = write_data(spec, arg);
-		list->next = ft_lstnew((char *)s_tmp);
+		if (!s_tmp)
+			return (error_memaloc(list, &delt_data));
+		list->next = ft_lstnew(s_tmp);
 		list->next->next = ft_lstnew(NULL);
 		list = list->next->next;
 		str = spec + 1;

@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   hextostr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:48:06 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:05:42 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
 #include <stdlib.h>
 
-const char	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
+t_data	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
 {
-	const char	*tmp;
+	char	*tmp;
 
 	tmp = spec;
-	tmp = p_h;
-	++tmp;
-	return (int_tostr_base(n, base));
+	tmp = *p_h;
+	return (t_datacrt(int_tostr_base(n, base), 0));
 }

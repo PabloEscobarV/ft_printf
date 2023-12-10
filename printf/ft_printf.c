@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:08:05 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:48:58 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:02:23 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int	ft_printf(const char *spec, ...)
 	va_start(arg, spec);
 	data = lst_tostr(spec, arg);
 	va_end(arg);
+	if (!data)
+	{
+		ft_putstr(ERROR_BDA);
+		return (ft_strlen(ERROR_BDA));
+	}
 	ft_putstr(data->str);
 	size = ft_strlen(data->str);
 	size += data->countZerro;

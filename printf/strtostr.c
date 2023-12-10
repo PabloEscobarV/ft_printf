@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   strtostr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:48:33 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:12:26 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
 #include <stdlib.h>
 
-const char	*tostr_mod(const char *str, const char *spec)
+t_data	*tostr_mod(const char *str, const char *spec)
 {
 	char	*tmp;
 
-	tmp = (char *)spec;
+	tmp = spec;
 	++tmp;
-	--tmp;
 	if (!str)
-		return (ft_strdup("(null)"));
-	if (*str != 0)
-		return (ft_strjoin(str, ""));
-	return (emptystr('\0'));
+		return (t_datacrt(ft_strdup("(null)"), 0));
+	return (t_datacrt(ft_strdup(str), 0));
 }

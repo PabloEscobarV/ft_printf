@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:34:36 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:09:21 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <limits.h>
-#include <stdio.h>
 
 void	*error_memaloc(t_list *list, void (*del)(void *))
 {
