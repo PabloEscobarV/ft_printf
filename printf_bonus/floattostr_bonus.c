@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:45:59 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 19:12:12 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,13 @@
 
 char	*p_float(double n, const char *base, char *str, double count)
 {
-	static int	t = 1;
 	int			size;
 
 	size = ft_strlen(base);
 	n *= size;
-	if (t)
-	{
-		*str = FDOT;
-		++str;
-		t = 0;
-	}
 	if (n - (long)n == 0 || count < 2)
 	{
 		*str = base[(int)n];
-		*(str + 1) = '\0';
-		t = 1;
 		return (str);
 	}
 	*str = base[(long)n % size];
@@ -43,17 +34,23 @@ char	*float_tostr_base(double n, const char *base, t_ui maxn)
 {
 	char	*num_int;
 	char	*num_float;
+	double	tmp;
 
 	num_int = int_tostr_base((long)n, base);
 	if (!num_int)
 		return (NULL);
 	if (maxn < 1)
 		return (num_int);
-	num_float = ft_calloc(maxn, sizeof(char));
+	num_float = malloc((maxn + 2) * sizeof(char));
 	if (!num_float)
 		return (NULL);
-	ft_memset(num_float, SPEC[ZERO], maxn);
-	p_float(n - (long)n, base, num_float, maxn);
+	*num_float = FDOT;
+	ft_memset(num_float + 1, ZERRO_CH, maxn);
+	num_float[maxn + 1] = '\0';
+	tmp = n - (long)n;
+	if (tmp < 0)
+		tmp *= -1;
+	p_float(tmp, base, num_float + 1, maxn);
 	return (strjoinfree(num_int, num_float, 2));
 }
 

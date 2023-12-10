@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:48:44 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:14:32 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:23:41 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*uint_tostr_base(t_ul n, const char *base)
 
 t_data	*uint_tostr(t_ul n, const char *spec, const char *base)
 {
-	char	*tmp;
+	const char	*tmp;
 
 	tmp = spec;
 	++tmp;

@@ -6,7 +6,7 @@
 #    By: polenyc <polenyc@student.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
-#    Updated: 2023/12/10 17:14:06 by polenyc          ###   ########.fr        #
+#    Updated: 2023/12/10 18:19:33 by polenyc          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ HEADERS = -I$(HEADERS_DIR)
 
 FILES = ft_printf.c ft_sprintf.c inttostr.c floattostr.c strtostr.c\
 	adrtostr.c hextostr.c numtostr.c str_addfunc.c str_tolist.c findspec.c\
-	add_func.c\
+	add_func.c uinttostr.c t_data.c chartostr.c\
 
 FILES_BONUS = ft_printf_bonus.c ft_sprintf_bonus.c inttostr_bonus.c\
 	floattostr_bonus.c strtostr_bonus.c adrtostr_bonus.c hextostr_bonus.c\

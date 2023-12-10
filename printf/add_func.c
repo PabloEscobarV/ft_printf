@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   add_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 15:47:31 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 19:14:16 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
-
-const char	*error(const char *str)
-{
-	return (ft_strdup(str));
-}
 
 const char	*findstart(const char *spc)
 {
@@ -38,3 +33,34 @@ char	*emptystr(char ch)
 	*tmp = ch;
 	return (tmp);
 }
+
+void	swap(char *s1, char *s2)
+{
+	char	tmp;
+
+	tmp = *s1;
+	*s1 = *s2;
+	*s2 = tmp;
+}
+
+void	swap_sign(t_mod *mod, char *str, char *num, char *ch_orig)
+{
+	char	tmp;
+	char	*ch_tmp;
+
+	if (!(*str) || !mod->flags[ZERO] || mod->flags[PREC] || mod->flags[INDENT])
+		return ;
+	ch_tmp = ch_orig;
+	while (!ft_isalnum(*ch_tmp))
+		++ch_tmp;
+	while (ft_strcmp(num, ch_tmp))
+	{
+		tmp = *str;
+		*str = *num;
+		*num = tmp;
+		++str;
+		++num;
+	}
+	free(ch_orig);
+}
+

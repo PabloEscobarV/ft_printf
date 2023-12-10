@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:05:42 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:24:37 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 t_data	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
 {
-	char	*tmp;
+	const char	*tmp;
 
 	tmp = spec;
-	tmp = *p_h;
+	tmp = (const char *)p_h;
+	++tmp;
 	return (t_datacrt(int_tostr_base(n, base), 0));
 }

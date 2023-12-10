@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:12:26 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:21:46 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_data	*tostr_mod(const char *str, const char *spec)
 {
-	char	*tmp;
+	const char	*tmp;
 
 	tmp = spec;
 	++tmp;

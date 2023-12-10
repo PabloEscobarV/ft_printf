@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:41:44 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:22:34 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ char	*addhexpre(const char *hex, char *str)
 
 t_data	*addr_tostr(void *p, const char *spec, const char *base)
 {
-	t_data	*num;
+	const char	*tmp;
+	t_data		*num;
 
+	tmp = spec;
+	++tmp;
 	if (!(uintptr_t)p)
 		return (t_datacrt(ft_strdup("(nil)"), 0));
 	num = t_datacrt(uint_tostr_base((uintptr_t)p, base), 0);
