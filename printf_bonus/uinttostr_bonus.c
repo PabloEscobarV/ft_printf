@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:48:44 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 16:26:30 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:52:27 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_data	*uint_tostr(t_ul n, const char *spec, const char *base)
 	mod = setmod(spec, MOD, SPEC);
 	if (!mod)
 		return (NULL);
-	num = t_datacrt(uint_tostr_base(n, base) ,0);
+	num = t_datacrt(uint_tostr_base(n, base), 0);
 	if (!num)
 		return (NULL);
 	num->str = intnum_mod(mod, num, 0, '0');

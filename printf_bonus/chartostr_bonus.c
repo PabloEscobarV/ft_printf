@@ -6,13 +6,13 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:40:57 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 12:29:01 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:42:41 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 
-t_data  *chartostr(const char ch, const char *spec)
+t_data	*chartostr(const char ch, const char *spec)
 {
 	t_data	*data;
 	t_mod	*mod;

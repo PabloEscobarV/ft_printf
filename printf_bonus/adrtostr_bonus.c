@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 17:35:18 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:42:01 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,30 +54,6 @@ char	*adr_tostr_base(void *p, const char *base)
 	return (str);
 }
 
-char	*hex_mod(t_mod *mod, char *str, char ch)
-{
-	int		size;
-	char	*tmp;
-
-	if (!mod->flags[PREC])
-		return (str);
-	mod->flags[ZERO] = '\0';
-	size = ft_strlen(str);
-	if (size >= mod->precision)
-		return (str);
-	tmp = ft_calloc(mod->precision - size + 1, sizeof(char));
-	if (!tmp)
-		return (NULL);
-	ft_memset(tmp, ch, mod->precision - size);
-	return (strjoinfree(tmp, str, 2));
-}
-
-char	*addr_mod(t_mod *mod, char *str, char ch)
-{
-	str = hex_mod(mod, str, ch);
-	return (strjoinfree(PRE_HEX_S, str, 1));
-}
-
 char	*addhexpre(const char *hex, char *str)
 {
 	char	*tmp;
@@ -99,10 +75,9 @@ t_data	*addr_tostr(void *p, const char *spec, const char *base)
 	char	*tmp;
 	char	*num_orig;
 
-
 	if (!(uintptr_t)p)
 		return (t_datacrt(ft_strdup("(nil)"), 0));
-	num = t_datacrt(uint_tostr_base((uintptr_t)p, base) ,0);
+	num = t_datacrt(uint_tostr_base((uintptr_t)p, base), 0);
 	if (!num)
 		return (NULL);
 	mod = setmod(spec, MOD, SPEC);

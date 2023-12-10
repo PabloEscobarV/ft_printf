@@ -6,17 +6,12 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 17:54:02 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:56:27 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdio.h>
-
-const char	*error(const char *str)
-{
-	return (ft_strdup(str));
-}
 
 const char	*findstart(const char *spc)
 {
@@ -56,17 +51,7 @@ void	swap(char *s1, char *s2)
 	*s2 = tmp;
 }
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while ((*s1 == *s2) && *s1)
-	{
-		++s1;
-		++s2;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-
-void		swap_sign(t_mod *mod, char *str, char *num, char *ch_orig)
+void	swap_sign(t_mod *mod, char *str, char *num, char *ch_orig)
 {
 	char	tmp;
 	char	*ch_tmp;

@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 17:46:52 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:00:10 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ enum
 int			ft_printf(const char *spec, ...);
 t_data		*lst_tostr(const char *str, va_list arg);
 t_list		*str_tolst(const char *str, int count, va_list arg);
+void		delt_data(void *ptr);
+//////////////////////////////////////STRING//////////////////////////////////
 t_data		*t_datacrt(char *str, int countzerro);
 void		delt_data(void *ptr);
 //////////////////////////////////////STRING//////////////////////////////////

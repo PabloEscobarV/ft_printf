@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:41:52 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 17:38:31 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:58:49 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*modnstr_crt(t_mod *mod, char *str)
 	return (tmp);
 }
 
-int		setsign(t_mod* mod, t_data *num)
+int	setsign(t_mod *mod, t_data *num)
 {
 	int	signe;
 
@@ -92,20 +92,6 @@ char	*intnum_mod(t_mod *mod, t_data *data, int signe, char ch)
 	return (strjoinfree(tmp, data->str, 2));
 }
 
-t_data		*t_datacrt(char *str, int countzerro)
-{
-	t_data	*data;
-
-	if (!str)
-		return (NULL);
-	data = malloc(sizeof(t_data));
-	if (!data)
-		return (NULL);
-	data->str = str;
-	data->countZerro = countzerro;
-	return (data);
-}
-
 t_data	*int_tostr(long n, const char *spec, const char *base)
 {
 	t_mod	*mod;
@@ -113,7 +99,7 @@ t_data	*int_tostr(long n, const char *spec, const char *base)
 	char	*tmp;
 	char	*num_orig;
 
-	num = t_datacrt(int_tostr_base(n, base) ,0);
+	num = t_datacrt(int_tostr_base(n, base), 0);
 	if (!num)
 		return (NULL);
 	mod = setmod(spec, MOD, SPEC);
