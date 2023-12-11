@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:05:48 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 14:26:01 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_data	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
 	if (!tmp)
 		return (NULL);
 	swap_sign(mod, tmp, num->str, num_orig);
+	free(num_orig);
 	if (mod->flags[INDENT] == MOD[INDENT])
 		return (retres_fin(mod, num, num->str, tmp));
 	return (retres_fin(mod, num, tmp, num->str));

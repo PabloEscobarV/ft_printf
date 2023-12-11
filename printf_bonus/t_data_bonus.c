@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:57:38 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:03:54 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 15:39:57 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,11 @@ t_data	*t_datacrt(char *str, int countzerro)
 		return (NULL);
 	data->str = str;
 	data->countZerro = countzerro;
+	return (data);
+}
+
+t_data	*extren_return(t_data *data, t_mod *mod)
+{
+	modfree(mod);
 	return (data);
 }

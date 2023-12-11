@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:18:22 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 21:01:51 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 const char	*findstart(const char *spc)
 {
+	--spc;
 	while (*spc != DEV)
 		--spc;
 	return (spc + 1);
@@ -68,5 +69,4 @@ void	swap_sign(t_mod *mod, char *str, char *num, char *ch_orig)
 		++str;
 		++num;
 	}
-	free(ch_orig);
 }

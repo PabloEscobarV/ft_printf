@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 18:53:12 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 21:43:04 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ char	*str_mod(t_mod *mod, const char *str)
 	int		size;
 	char	*tmp;
 
+	if (!str)
+	{
+		if (mod->flags[PREC] && mod->precision < ft_strlen(STR_NULL))
+			return (emptystr('\0'));
+		return (ft_strdup(STR_NULL));
+	}
 	if (!mod->precision)
 		return (ft_strdup(str));
 	size = ft_strlen(str);
@@ -68,13 +74,11 @@ t_data	*tostr_mod(const char *str, const char *spec)
 	char	*str_m;
 	t_data	*data;
 
-	if (!str)
-		return (t_datacrt(ft_strdup("(null)"), 0));
 	mod = setmod(spec, MOD, SPEC);
 	if (!mod)
 		return (NULL);
 	if (mod->flags[PREC] && !mod->precision)
-		return (t_datacrt(emptystr('\0'), 0));
+		return (extren_return(t_datacrt(emptystr('\0'), 0), mod));
 	data = t_datacrt(str_mod(mod, str), 0);
 	if (!data)
 		return (NULL);

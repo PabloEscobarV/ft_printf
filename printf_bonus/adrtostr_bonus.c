@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:20:03 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 15:42:15 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,8 @@ t_data	*addr_tostr(void *p, const char *spec, const char *base)
 	num_orig = ft_strdup(num->str);
 	num->str = addhexpre(PRE_HEX_S, num->str);
 	tmp = modnstr_crt(mod, num->str);
-	if (!tmp)
-		return (NULL);
 	swap_sign(mod, tmp, num->str, num_orig);
+	free(num_orig);
 	if (mod->flags[INDENT] == MOD[INDENT])
 		return (retres_fin(mod, num, num->str, tmp));
 	return (retres_fin(mod, num, tmp, num->str));

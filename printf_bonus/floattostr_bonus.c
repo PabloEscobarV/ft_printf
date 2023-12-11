@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 19:12:12 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 14:47:59 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,14 @@ t_data	*float_tostr(double n, const char *spec, const char *base, t_ui m)
 	num = t_datacrt(float_tostr_base(n, base, m), 0);
 	if (!num)
 		return (NULL);
-	num_orig = num->str;
+	num_orig = ft_strdup(num->str);
 	setsign(mod, num);
 	tmp = modnstr_crt(mod, num->str);
 	if (!tmp)
 		return (NULL);
 	if (!ft_isdigit(*num_orig))
 		swap_sign(mod, tmp, num->str, num_orig);
+	free(num_orig);
 	if (mod->flags[INDENT] == MOD[INDENT])
 		return (retres_fin(mod, num, num->str, tmp));
 	return (retres_fin(mod, num, tmp, num->str));

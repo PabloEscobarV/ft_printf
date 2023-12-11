@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:12:38 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:43:46 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 15:45:58 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,50 @@ const char	*find_mod(const char *str, const char *spec)
 	return (NULL);
 }
 
+const char	*checkspec(const char *str)
+{
+	if (*(str - 1) == DEV && *str != DEV)
+	{
+		while (find_mod(str, MOD))
+			++str;
+		while (ft_isdigit(*str))
+			++str;
+		if (*str == FDOT)
+			++str;
+		while (ft_isdigit(*str))
+			++str;
+		if (find_mod(str, SPEC))
+			return (str);
+	}
+	return (NULL);
+}
+
 const char	*find_spec(const char *str)
 {
+	const char	*tmp;
+	int			size;
+
 	if (!(*str))
 		return (NULL);
+	size = ft_strlen(str);
 	++str;
 	while (*str)
 	{
-		if (*(str - 1) == DEV && *str != DEV)
+		if (*(str - 1) == DEV && *str == DEV)
 		{
-			while (find_mod(str, MOD))
-				++str;
-			while (ft_isdigit(*str))
-				++str;
-			if (*str == FDOT)
-				++str;
-			while (ft_isdigit(*str))
-				++str;
-			if (find_mod(str, SPEC))
-				return (str);
+			if (str + 2 >= str + size)
+				return (NULL);
+			str += 2;
+			continue ;
 		}
+		tmp = checkspec(str);
+		if (tmp)
+			return (tmp);
 		++str;
 	}
 	return (NULL);
 }
+
 
 size_t	count_spec(const char *str)
 {

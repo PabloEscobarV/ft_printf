@@ -6,12 +6,12 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 17:57:34 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/11 21:38:00 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#define SPEC			"scdiufpxX"
+#define SPEC			"scdiufpxX%"
 #define MOD				"-0+#. "
 #define DEV				'%'
 #define FDOT			'.'
@@ -26,6 +26,7 @@
 #define PRE_HEX_L		"0X"
 #define ZERRO_CH        '0'
 #define SPACE_CH        ' '
+#define STR_NULL		"(null)"
 #include <stdarg.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -53,14 +54,30 @@ enum
 	PREC,
 	SPACE,
 };
+enum
+{
+	STR,
+	CH,
+	D_INT,
+	I_DAT,
+	U_INT,
+	F_DAT,
+	P_DAT,
+	H_D_S,
+	H_D_L,
+	PRCNT,
+};
 
 int			ft_printf(const char *spec, ...);
 t_data		*lst_tostr(const char *str, va_list arg);
 t_list		*str_tolst(const char *str, int count, va_list arg);
 void		delt_data(void *ptr);
 void		*error_memaloc(t_list *list, void (*del)(void *));
+//////////////////////////////////////PRCNT//////////////////////////////////
+// t_data		*perctostr(const char *spec);
 //////////////////////////////////////STRING//////////////////////////////////
 t_data		*t_datacrt(char *str, int countzerro);
+t_data		*extren_return(t_data *data, t_mod *mod);
 //////////////////////////////////////STRING//////////////////////////////////
 t_data  	*chartostr(const char ch, const char *spec);
 t_data		*tostr_mod(const char *str, const char *spec);
@@ -91,7 +108,7 @@ char		*intnum_mod(t_mod *mod, t_data *data, int signe, char ch);
 char		*modnstr_crt(t_mod *mod, char *str);
 //////////////////////////////////////ADRES////////////////////////////////////
 t_data		*addr_tostr(void *p, const char *spec, const char *base);
-char		*hex_mod(t_mod *mod, char *str, char ch);
+// char		*hex_mod(t_mod *mod, char *str, char ch);
 //////////////////////////////////////FIND SPEC////////////////////////////////
 const char	*findstart(const char *spc);
 size_t		count_spec(const char *str);
