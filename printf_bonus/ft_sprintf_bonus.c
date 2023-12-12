@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 12:38:12 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 23:09:24 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,21 @@ t_data	*lst_tostr(const char *str, va_list arg)
 	return (data);
 }
 
+int	printch(t_data *data)
+{
+	if (data->countZerro == 0)
+		return (0);
+	if (data->countZerro > 0)
+	{
+		ft_putstr(data->str);
+		ft_putchar('\0');
+		return (ft_strlen(data->str) + 1);
+	}
+	ft_putchar('\0');
+	ft_putstr(data->str);
+	return (ft_strlen(data->str) + 1);
+}
+
 int	printdata(const char *str, va_list arg)
 {
 	t_list	*list;
@@ -73,14 +88,17 @@ int	printdata(const char *str, va_list arg)
 
 	list = str_tolst(str, arg);
 	if (!list)
-	{
-		ft_putstr(ERROR_BDA);
-		return (ft_strlen(ERROR_BDA));
-	}
+		return (-1);
 	tmp = list;
 	count = 0;
 	while (tmp)
 	{
+		if (((t_data *)tmp->content)->countZerro != 0)
+		{
+			count += printch(tmp->content);\
+			tmp = tmp->next;
+			continue ;
+		}
 		ft_putstr(((t_data *)tmp->content)->str);
 		count += ft_strlen(((t_data *)tmp->content)->str);
 		count += ((t_data *)tmp->content)->countZerro;

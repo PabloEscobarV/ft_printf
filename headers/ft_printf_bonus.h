@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 12:47:13 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 23:08:34 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_mod
 typedef struct s_data
 {
     char    *str;
-    t_ui    countZerro;
+    int    countZerro;
 }               t_data;
 enum
 {

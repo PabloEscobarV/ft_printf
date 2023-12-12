@@ -6,7 +6,7 @@
 #    By: polenyc <polenyc@student.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 14:44:45 by polenyc           #+#    #+#              #
-#    Updated: 2023/12/07 21:45:56 by polenyc          ###   ########.fr        #
+#    Updated: 2023/12/12 23:11:32 by polenyc          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,4 +40,4 @@ fclean: clean
 re: fclean all
 
 run: re
-	./$(NAME)
+	./$(NAME) | cat -e

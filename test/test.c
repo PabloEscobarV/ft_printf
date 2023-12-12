@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 01:07:27 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/11 15:53:04 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 23:11:17 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,81 @@ int main (void)
 
 	size_p = 0;
 	size_f = 0;
+
+	size_p += printf("|%-10c %-2c %-3c|\n", 0, 'X', 0);
+	size_f += ft_printf("|%-10c %-2c %-3c|\n", 0, 'X', 0);
+
+	size_p += printf("|%1c %5c %10c|\n", 0, 'X', 0);
+	size_f += ft_printf("|%-1c %5c %10c|\n", 0, 'X', 0);
+
+	// size_p += printf("%s", ft_sprintf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+	// size_f += ft_printf("%s", ft_sprintf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+
+	// size_f += ft_printf("| %%|\n");
+	// size_p += printf("| %%|\n");
+
+	// size_f += ft_printf("|%5%|\n");
+	// size_p += printf("|%5%|\n");
 	
-	size_p += printf("| %%|\n");
-	size_f += ft_printf("| %%|\n");
+	// size_f += ft_printf("|%-5%|\n");
+	// size_p += printf("|%-5%|\n");
+	
+	// size_f += ft_printf("|%-05%|\n");
+	// size_p += printf("|%-05%|\n");
+	
+	// size_f += ft_printf("|%23s|\n", NULL);
+	// size_p += printf("|%23s|\n", NULL);
+	
+	// size_f += ft_printf("|%.s|\n", NULL);
+	// size_p += printf("|%.s|\n", NULL);
+	
+	// size_f += ft_printf("|%32s|\n", "abc");
+	// size_p += printf("|%32s|\n", "abc");
+	
+	// size_f += ft_printf("|%16s|\n", "nark nark");
+	// size_p += printf("|%16s|\n", "nark nark");
+	
+	// size_f += ft_printf("|%-32s|\n", "abc");
+	// size_p += printf("|%-32s|\n", "abc");
+	
+	// size_f += ft_printf("|%-16s|\n", "nark nark");
+	// size_p += printf("|%-16s|\n", "nark nark");
+	
+	// size_f += ft_printf("|%.3s|\n", "hello");
+	// size_p += printf("|%.3s|\n", "hello");
+	
+	// size_f += ft_printf("|%.s|\n", "hello");
+	// size_p += printf("|%.s|\n", "hello");
+	
+	// size_f += ft_printf("|%.0s|\n", "hello");
+	// size_p += printf("|%.0s|\n", "hello");
+	
+	// size_f += ft_printf("|%.3s%.2s|\n", "holla", "bitch");
+	// size_p += printf("|%.3s%.2s|\n", "holla", "bitch");
+	
+	// size_f += ft_printf("|%.2s%.7s|\n", "hello", "world");
+	// size_p += printf("|%.2s%.7s|\n", "hello", "world");
+	
+	// size_f += ft_printf("|%.7s%.2s|\n", "hello", "world");
+	// size_p += printf("|%.7s%.2s|\n", "hello", "world");
+	
+	// size_f += ft_printf("|%.5s%7s|\n", "yo", "boi");
+	// size_p += printf("|%.5s%7s|\n", "yo", "boi");
+	
+	// size_f += ft_printf("|%7.5s|\n", "yolo");
+	// size_p += printf("|%7.5s|\n", "yolo");
+	
+	// size_f += ft_printf("|%7.5s|\n", "bombastic");
+	// size_p += printf("|%7.5s|\n", "bombastic");
+	
+	// size_f += ft_printf("|%-7.5s|\n", "yolo");
+	// size_p += printf("|%-7.5s|\n", "yolo");
+	
+	// size_f += ft_printf("|%-7.5s|\n", "tubular");
+	// size_p += printf("|%-7.5s|\n", "tubular");
+
+	// size_p += printf("| %%|\n");
+	// size_f += ft_printf("| %%|\n");
 
  	// size_p += printf("|%c %c %c|\n", 0, 'X', 'X');
 	// size_f += ft_printf("|%c %c %c|\n", 0, 'X', 'X');
@@ -148,6 +220,239 @@ int main (void)
 	// size_p += printf("| %d |\n", UINT_MAX);
 	// size_f += ft_printf("| %d |\n", UINT_MAX);
 
+	// size_f += ft_printf("|%5%|\n");
+	// size_p += printf("|%5%|\n");
+	
+	// size_f += ft_printf("|%-5%|\n");
+	// size_p += printf("|%-5%|\n");
+	
+	// size_f += ft_printf("|%-05%|\n");
+	// size_p += printf("|%-05%|\n");
+	
+	// size_f += ft_printf("|%23s|\n", NULL);
+	// size_p += printf("|%23s|\n", NULL);
+	
+	// size_f += ft_printf("|%.s|\n", NULL);
+	// size_p += printf("|%.s|\n", NULL);
+	
+	// size_f += ft_printf("|%32s|\n", "abc");
+	// size_p += printf("|%32s|\n", "abc");
+	
+	// size_f += ft_printf("|%16s|\n", "nark nark");
+	// size_p += printf("|%16s|\n", "nark nark");
+	
+	// size_f += ft_printf("|%-32s|\n", "abc");
+	// size_p += printf("|%-32s|\n", "abc");
+	
+	// size_f += ft_printf("|%-16s|\n", "nark nark");
+	// size_p += printf("|%-16s|\n", "nark nark");
+	
+	// size_f += ft_printf("|%.3s|\n", "hello");
+	// size_p += printf("|%.3s|\n", "hello");
+	
+	// size_f += ft_printf("|%.s|\n", "hello");
+	// size_p += printf("|%.s|\n", "hello");
+	
+	// size_f += ft_printf("|%.0s|\n", "hello");
+	// size_p += printf("|%.0s|\n", "hello");
+	
+	// size_f += ft_printf("|%.3s%.2s|\n", "holla", "bitch");
+	// size_p += printf("|%.3s%.2s|\n", "holla", "bitch");
+	
+	// size_f += ft_printf("|%.2s%.7s|\n", "hello", "world");
+	// size_p += printf("|%.2s%.7s|\n", "hello", "world");
+	
+	// size_f += ft_printf("|%.7s%.2s|\n", "hello", "world");
+	// size_p += printf("|%.7s%.2s|\n", "hello", "world");
+	
+	// size_f += ft_printf("|%.5s%7s|\n", "yo", "boi");
+	// size_p += printf("|%.5s%7s|\n", "yo", "boi");
+	
+	// size_f += ft_printf("|%7.5s|\n", "yolo");
+	// size_p += printf("|%7.5s|\n", "yolo");
+	
+	// size_f += ft_printf("|%7.5s|\n", "bombastic");
+	// size_p += printf("|%7.5s|\n", "bombastic");
+	
+	// size_f += ft_printf("|%-7.5s|\n", "yolo");
+	// size_p += printf("|%-7.5s|\n", "yolo");
+	
+	// size_f += ft_printf("|%-7.5s|\n", "tubular");
+	// size_p += printf("|%-7.5s|\n", "tubular");
+
+	// size_p += printf("| %%|\n");
+	// size_f += ft_printf("| %%|\n");
+
+ 	// size_p += printf("|%c %c %c|\n", 0, 'X', 'X');
+	// size_f += ft_printf("|%c %c %c|\n", 0, 'X', 'X');
+
+	// size_p += printf("|%c %c %c|\n", 'X', 'X', 0);
+	// size_f += ft_printf("|%c %c %c|\n", 'X', 'X', 0);
+
+	// size_p += printf("| %% |\n");
+	// size_f += ft_printf("| %% |\n");
+	
+	// size_p += printf("| %%%% |\n");
+	// size_f += ft_printf("| %%%% |\n");
+
+	// size_p += printf("| %% %% %% |\n");
+	// size_f += ft_printf("| %% %% %% |\n");
+
+	// size_p += printf("| %%  %%  %% |\n");
+	// size_f += ft_printf("| %%  %%  %% |\n");
+
+	// size_p += printf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	// size_f += ft_printf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+
+	// size_p += printf("| %d |\n", 9223372036854775807LL);
+	// size_f += ft_printf("| %d |\n", 9223372036854775807LL);
+
+	// size_p += printf("| %d |\n", -101);
+	// size_f += ft_printf("| %d |\n", -101);
+
+	// size_p += printf("| %d |\n", LONG_MAX);
+	// size_f += ft_printf("| %d |\n", LONG_MAX);
+
+	// size_p += printf("| %d |\n", UINT_MAX);
+	// size_f += ft_printf("| %d |\n", UINT_MAX);
+
+	// size_p += printf("| %d |\n", ULONG_MAX);
+	// size_f += ft_printf("| %d |\n", ULONG_MAX);
+
+	// size_p += printf("| %s |\n", "-");
+	// size_f += ft_printf("| %s |\n", "-");
+
+	// size_p += printf("| %u |\n", 0);
+	// size_f += ft_printf("| %u |\n", 0);
+
+	// size_p += printf("|%d|\n", 42);
+	// size_f += ft_printf("|%d|\n", 42);
+
+	// size_p += printf("| %s |\n", "-");
+	// size_f += ft_printf("| %s |\n", "-");
+
+	// size_p += printf("| %d |\n", -1);
+	// size_f += ft_printf("| %d |\n", -1);
+
+	// size_p += printf("| %d |\n", -11);
+	// size_f += ft_printf("| %d |\n", -11);
+
+	// size_p += printf("| %d |\n", -14);
+	// size_f += ft_printf("| %d |\n", -14);
+
+	// size_p += printf("| %d |\n", -99);
+	// size_f += ft_printf("| %d |\n", -99);
+
+	// size_p += printf("| %d |\n", -101);
+	// size_f += ft_printf("| %d |\n", -101);
+
+	// size_p += printf("| %d |\n", LONG_MAX);
+	// size_f += ft_printf("| %d |\n", LONG_MAX);
+
+	// size_p += printf("| %d |\n", UINT_MAX);
+	// size_f += ft_printf("| %d |\n", UINT_MAX);
+
+	// size_p += printf("| %d |\n", ULONG_MAX);
+	// size_f += ft_printf("| %d |\n", ULONG_MAX);
+
+	// size_p += printf("| %d |\n", 9223372036854775807LL);
+	// size_f += ft_printf("| %d |\n", 9223372036854775807LL);
+
+	// size_p += printf("| %d %d %d %d %d %d %d|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// size_f += ft_printf("| %d %d %d %d %d %d %d|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+	// size_p += printf("| %i |\n", -1);
+	// size_f += ft_printf("| %i |\n", -1);
+
+	// size_p += printf("| %i |\n", -11);
+	// size_f += ft_printf("| %i |\n", -11);
+
+	// size_p += printf("| %i |\n", -14);
+	// size_f += ft_printf("| %i |\n", -14);
+
+	// size_p += printf("| %i |\n", -99);
+	// size_f += ft_printf("| %i |\n", -99);
+
+	// size_p += printf("| %i |\n", -101);
+	// size_f += ft_printf("| %i |\n", -101);
+
+	// size_p += printf("| %i |\n", LONG_MAX);
+	// size_f += ft_printf("| %i |\n", LONG_MAX);
+
+	// size_p += printf("| %i |\n", UINT_MAX);
+	// size_f += ft_printf("| %i |\n", UINT_MAX);
+
+	// size_p += printf("| %i |\n", ULONG_MAX);
+	// size_f += ft_printf("| %i |\n", ULONG_MAX);
+
+	// size_p += printf("| %i |\n", 9223372036854775807LL);
+	// size_f += ft_printf("| %i |\n", 9223372036854775807LL);
+
+	// size_p += printf("| %i %i %i %i %i %i %i|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// size_f += ft_printf("| %i %i %i %i %i %i %i|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+	// size_p += printf("| %% |\n");
+	// size_f += ft_printf("| %% |\n");
+	
+	// size_p += printf("| %%%% |\n");
+	// size_f += ft_printf("| %%%% |\n");
+
+	// size_p += printf("| %% %% %% |\n");
+	// size_f += ft_printf("| %% %% %% |\n");
+
+	// size_p += printf("| %%  %%  %% |\n");
+	// size_f += ft_printf("| %%  %%  %% |\n");
+
+	// size_p += printf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	// size_f += ft_printf("|%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%|\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+			
+	// size_p += printf("| %x |\n", LONG_MAX);
+	// size_f += ft_printf("| %x |\n", LONG_MAX);
+
+	// size_p += printf("| %x |\n", LONG_MIN);
+	// size_f += ft_printf("| %x |\n", LONG_MIN);
+
+	// size_p += printf("| %x |\n", ULONG_MAX);
+	// size_f += ft_printf("| %x |\n", ULONG_MAX);
+
+	// size_p += printf("| %x |\n", 9223372036854775807LL);
+	// size_f += ft_printf("| %x |\n", 9223372036854775807LL);
+
+	// size_p += printf("| %x %x %x %x %x %x %x|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// size_f += ft_printf("| %x %x %x %x %x %x %x|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+	// size_p += printf("| %u |\n", LONG_MAX);
+	// size_f += ft_printf("| %u |\n", LONG_MAX);
+	
+	// size_p += printf("| %u |\n", LONG_MIN);
+	// size_f += ft_printf("| %u |\n", LONG_MIN);
+
+	// size_p += printf("| %u |\n", ULONG_MAX);
+	// size_f += ft_printf("| %u |\n", ULONG_MAX);
+
+	// size_p += printf("| %u |\n", 9223372036854775807LL);
+	// size_f += ft_printf("| %u |\n", 9223372036854775807LL);
+
+	// size_p += printf("| %u %u %u %u %u %u %u|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// size_f += ft_printf("| %u %u %u %u %u %u %u|\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// size_p += printf("| %p |\n", 16);
+	// size_f += ft_printf("| %p |\n", 16);
+
+	// size_p += printf("| %p %p |\n", LONG_MIN, LONG_MAX);
+	// size_f += ft_printf("| %p %p |\n", LONG_MIN, LONG_MAX);
+
+	// size_p += printf("| %p %p |\n", INT_MIN, INT_MAX);
+	// size_f += ft_printf("| %p %p |\n", INT_MIN, INT_MAX);
+
+	// size_p += printf("| %p %p |\n", ULONG_MAX, -ULONG_MAX);
+	// size_f += ft_printf("| %p %p |\n", ULONG_MAX, -ULONG_MAX);
+
+	// size_p += printf("| %d |\n", -101);
+	// size_f += ft_printf("| %d |\n", -101);
+
+	// size_f += ft_printf("| %p %p |\n", 0, 0);
+	// size_p += printf("| %p %p |\n", 0, 0);
+	
 	// size_p += printf("| %d |\n", ULONG_MAX);
 	// size_f += ft_printf("| %d |\n", ULONG_MAX);
 
@@ -852,6 +1157,7 @@ int main (void)
 	// ft_printf("\n--------------------///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--------------------------------\n\n");
 	// size_p += printf("|%X|\t|%10X|\t|%-10X|\t|%010X|\t|%-010X|\t|%+-10X|\t|%+-#010.3X|\t|%+#020.15X|\n", 255, 255, 255, 255, 255, 255, 255, 255);
 	// size_f += ft_printf("|%X|\t|%10X|\t|%-10X|\t|%010X|\t|%-010X|\t|%+-10X|\t|%+-#010.3X|\t|%+#020.15X|\n", 255, 255, 255, 255, 255, 255, 255, 255);
+
 	// ft_printf("\n--------------------///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--------------------------------\n\n");
 	// size_p += ft_printf("%s\n", str);
 	// ft_printf("\n--------------------///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--------------------------------\n\n");
