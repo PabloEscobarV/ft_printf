@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:09:39 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:50:51 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,30 @@ void	*error_memaloc(t_list *list, void (*del)(void *))
 
 t_data	*write_chrs(const char *spec, va_list arg)
 {
-	if (*spec == 'c')
+	if (*spec == SPEC[PRCNT])
+		return (t_datacrt(emptystr(SPEC[PRCNT]), 0));
+	if (*spec == SPEC[CH])
 		return (chartostr(va_arg(arg, int), spec));
-	if (*spec == 's')
+	if (*spec == SPEC[STR])
 		return (tostr_mod(va_arg(arg, char *), spec));
-	if (*spec == 'p')
+	if (*spec == SPEC[P_DAT])
 		return (addr_tostr(va_arg(arg, void *), spec, HEX_S));
 	return (NULL);
 }
 
 t_data	*write_digit(const char *spec, va_list arg)
 {
-	if (*spec == 'd')
+	if (*spec == SPEC[D_INT])
 		return (int_tostr(va_arg(arg, int), spec, DEC));
-	if (*spec == 'i')
+	if (*spec == SPEC[I_DAT])
 		return (int_tostr(va_arg(arg, int), spec, DEC));
-	if (*spec == 'u')
+	if (*spec == SPEC[U_INT])
 		return (uint_tostr(va_arg(arg, t_ui), spec, DEC));
-	if (*spec == 'f')
+	if (*spec == SPEC[F_DAT])
 		return (float_tostr(va_arg(arg, double), spec, DEC, 6));
-	if (*spec == 'x')
+	if (*spec == SPEC[H_D_S])
 		return (hex_tostr(va_arg(arg, t_ui), spec, HEX_S, PRE_HEX_S));
-	if (*spec == 'X')
+	if (*spec == SPEC[H_D_L])
 		return (hex_tostr(va_arg(arg, t_ui), spec, HEX_L, PRE_HEX_L));
 	return (NULL);
 }
@@ -60,7 +62,7 @@ t_data	*write_data(const char *spec, va_list arg)
 	return (write_digit(spec, arg));
 }
 
-t_list	*str_tolst(const char *str, int count, va_list arg)
+t_list	*str_tolst(const char *str, va_list arg)
 {
 	t_list		*list;
 	t_list		*lst_tmp;
@@ -69,9 +71,9 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 
 	list = ft_lstnew(NULL);
 	lst_tmp = list;
-	while (count)
+	spec = find_spec(str);
+	while (spec)
 	{
-		spec = find_spec(str);
 		list->content = str_tostr(str, spec, DEV);
 		s_tmp = write_data(spec, arg);
 		if (!s_tmp)
@@ -80,7 +82,7 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 		list->next->next = ft_lstnew(NULL);
 		list = list->next->next;
 		str = spec + 1;
-		--count;
+		spec = find_spec(str);
 	}
 	list->content = ft_strdup_wch(str, DEV);
 	return (lst_tmp);

@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/11 20:59:08 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:10:14 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_data	*write_data(const char *spec, va_list arg)
 	return (write_digit(spec, arg));
 }
 
-t_list	*str_tolst(const char *str, int count, va_list arg)
+t_list	*str_tolst(const char *str, va_list arg)
 {
 	t_list		*list;
 	t_list		*lst_tmp;
@@ -71,9 +71,9 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 
 	list = ft_lstnew(NULL);
 	lst_tmp = list;
-	while (count)
+	spec = find_spec(str);
+	while (spec)
 	{
-		spec = find_spec(str);
 		list->content = str_tostr(str, spec, DEV);
 		s_tmp = write_data(spec, arg);
 		if (!s_tmp)
@@ -82,7 +82,7 @@ t_list	*str_tolst(const char *str, int count, va_list arg)
 		list->next->next = ft_lstnew(NULL);
 		list = list->next->next;
 		str = spec + 1;
-		--count;
+		spec = find_spec(str);
 	}
 	list->content = ft_strdup_wch(str, DEV);
 	return (lst_tmp);

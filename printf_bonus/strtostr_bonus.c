@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/11 21:43:04 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:51:41 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*str_mod(t_mod *mod, const char *str)
 
 	if (!str)
 	{
-		if (mod->flags[PREC] && mod->precision < ft_strlen(STR_NULL))
+		if (mod->flags[PREC] && mod->precision < (int )ft_strlen(STR_NULL))
 			return (emptystr('\0'));
 		return (ft_strdup(STR_NULL));
 	}

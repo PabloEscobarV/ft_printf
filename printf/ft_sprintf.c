@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:03:09 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:49:20 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,38 @@ t_data	*lst_tostr(const char *str, va_list arg)
 	t_list	*list;
 	t_data	*data;
 	char	*s;
-	int		count;
 
-	count = count_spec(str);
-	if (!count)
-		return (ft_strdup_wch(str, DEV));
-	list = str_tolst(str, count, arg);
+	list = str_tolst(str, arg);
 	s = crt_strlst(list);
 	if (!s)
 		return (error_memaloc(list, &delt_data));
 	data = setdata(list, s);
 	ft_lstclear(&list, &delt_data);
 	return (data);
+}
+
+
+int	printdata(const char *str, va_list arg)
+{
+	t_list	*list;
+	t_list	*tmp;
+	int		count;
+
+	list = str_tolst(str, arg);
+	if (!list)
+	{
+		ft_putstr(ERROR_BDA);
+		return (ft_strlen(ERROR_BDA));
+	}
+	tmp = list;
+	count = 0;
+	while (tmp)
+	{
+		ft_putstr(((t_data *)tmp->content)->str);
+		count += ft_strlen(((t_data *)tmp->content)->str);
+		count += ((t_data *)tmp->content)->countZerro;
+		tmp = tmp->next;
+	}
+	ft_lstclear(&list, &delt_data);
+	return (count);
 }
