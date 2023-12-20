@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setflags_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:45:12 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/07 23:05:30 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/20 17:57:18 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ t_ui	setflags(const char *spc, const char *flags, t_mod *mod)
 	while (*spc != flags[i] && flags[i])
 		++i;
 	if (*spc != flags[i])
-		return (0);
-	if (*spc == flags[ZERO] && !ft_isdigit(*(spc + 1)))
 		return (0);
 	mod->flags[i] = *spc;
 	return (1);

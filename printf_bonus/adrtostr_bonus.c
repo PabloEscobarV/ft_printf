@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 13:59:43 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/20 18:10:26 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_data	*addr_tostr(void *p, const char *spec, const char *base)
 	mod = setmod(spec, MOD, SPEC);
 	if (!mod)
 		return (NULL);
-	num->str = intnum_mod(mod, num, setsign(mod, num), '0');
+	num->str = intnum_mod(mod, num, 0, '0');
 	if (!num->str)
 		return (NULL);
 	num_orig = ft_strdup(num->str);

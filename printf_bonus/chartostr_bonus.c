@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:40:57 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 13:54:47 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/20 12:34:40 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ t_data	*chartostr(const char ch, const char *spec)
 	if (!ch)
 		--mod->size;
 	data = t_datacrt(emptystr(ch), 0);
-	if (!ch)
+	if (!ch && mod->flags[INDENT])
+		--data->countzerro;
+	if (!ch && !mod->flags[INDENT])
 		++data->countzerro;
 	tmp = modstr_crt(mod, ft_strlen(data->str), ' ');
 	if (!tmp)

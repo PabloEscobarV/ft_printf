@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 14:54:45 by polenyc          ###   ########.fr       */
+/*   Updated: 2023/12/20 15:22:55 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <limits.h>
+#include <stdio.h>
 
 void	*error_memaloc(t_list *list, void (*del)(void *))
 {
@@ -78,11 +79,9 @@ t_list	*str_tolst(const char *str, va_list arg)
 		s_tmp = write_data(spec, arg);
 		if (!s_tmp)
 			return (error_memaloc(list, &delt_data));
-		s_tmp->str = strjoinfree(((t_data *)list->content)->str, s_tmp->str, 1);
-		delt_data(list->content);
-		list->content = s_tmp;
-		list->next = ft_lstnew(NULL);
-		list = list->next;
+		list->next = ft_lstnew(s_tmp);
+		list->next->next = ft_lstnew(NULL);
+		list = list->next->next;
 		str = spec + 1;
 		spec = find_spec(str);
 	}
