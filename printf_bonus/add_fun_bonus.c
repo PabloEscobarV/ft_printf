@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   add_fun_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/11 21:01:51 by polenyc          ###   ########.fr       */
-=======
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/20 17:48:54 by polenyc          ###   ########.fr       */
->>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
-<<<<<<< HEAD
-=======
 #include <stdio.h>
->>>>>>> main
 
 const char	*findstart(const char *spc)
 {

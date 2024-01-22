@@ -3,26 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   hextostr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/11 14:26:01 by polenyc          ###   ########.fr       */
-=======
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/20 18:04:31 by polenyc          ###   ########.fr       */
->>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf_bonus.h"
 #include <stdlib.h>
-<<<<<<< HEAD
-=======
 #include <stdio.h>
->>>>>>> main
 
 char	*hexint_mod(t_mod *mod, char *str, const char *base, const char *p_h)
 {
@@ -33,8 +23,6 @@ char	*hexint_mod(t_mod *mod, char *str, const char *base, const char *p_h)
 	return (strjoinfree((char *)p_h, str, 1));
 }
 
-<<<<<<< HEAD
-=======
 void	swap_hex(t_mod *mod, char *str, char *num, char *ch_orig)
 {
 	char	*ch_tmp;
@@ -59,7 +47,6 @@ void	swap_hex(t_mod *mod, char *str, char *num, char *ch_orig)
 	}
 }
 
->>>>>>> main
 t_data	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
 {
 	t_mod	*mod;
@@ -81,11 +68,7 @@ t_data	*hex_tostr(long n, const char *spec, const char *base, char *p_h)
 	tmp = modnstr_crt(mod, num->str);
 	if (!tmp)
 		return (NULL);
-<<<<<<< HEAD
-	swap_sign(mod, tmp, num->str, num_orig);
-=======
 	swap_hex(mod, tmp, num->str, num_orig);
->>>>>>> main
 	free(num_orig);
 	if (mod->flags[INDENT] == MOD[INDENT])
 		return (retres_fin(mod, num, num->str, tmp));

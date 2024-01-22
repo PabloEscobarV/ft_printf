@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strtostr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 12:51:41 by polenyc          ###   ########.fr       */
-=======
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:36:19 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/20 14:45:51 by polenyc          ###   ########.fr       */
->>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +51,12 @@ char	*str_mod(t_mod *mod, const char *str)
 
 	if (!str)
 	{
-<<<<<<< HEAD
-		if (mod->flags[PREC] && mod->precision < (int )ft_strlen(STR_NULL))
-			return (emptystr('\0'));
-=======
 		if (mod->flags[PREC] && mod->precision < (int)ft_strlen(STR_NULL))
 		{
 			str = malloc((mod->precision + 1) * sizeof(char));
 			ft_strlcpy((char *)str, STR_NULL, mod->precision + 1);
 			return ((char *)str);
 		}
->>>>>>> main
 		return (ft_strdup(STR_NULL));
 	}
 	if (!mod->precision)

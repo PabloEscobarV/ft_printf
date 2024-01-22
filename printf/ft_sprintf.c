@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 12:49:20 by polenyc          ###   ########.fr       */
-=======
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2024/01/22 14:10:16 by polenyc          ###   ########.fr       */
->>>>>>> main
+/*   Updated: 2024/01/22 15:24:40 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +42,11 @@ t_data	*setdata(t_list *list, char *s)
 	count = 0;
 	while (list)
 	{
-<<<<<<< HEAD
-		count += ((t_data *)(list->content))->countZerro;
-		ft_strcpy(data->str, ((t_data *)(list->content))->str);
-		list = list->next;
-	}
-	data->countZerro = count;
-=======
 		count += ((t_data *)(list->content))->countzerro;
-		ft_strcpy_tend(data->str, ((t_data *)(list->content))->str);
+		ft_strcpy_toend(data->str, ((t_data *)(list->content))->str);
 		list = list->next;
 	}
 	data->countzerro = count;
->>>>>>> main
 	return (data);
 }
 
@@ -80,8 +65,6 @@ t_data	*lst_tostr(const char *str, va_list arg)
 	return (data);
 }
 
-<<<<<<< HEAD
-=======
 int	printch(t_data *data)
 {
 	if (data->countzerro == 0)
@@ -96,7 +79,6 @@ int	printch(t_data *data)
 	ft_putstr(data->str);
 	return (ft_strlen(data->str) + 1);
 }
->>>>>>> main
 
 int	printdata(const char *str, va_list arg)
 {
@@ -106,23 +88,11 @@ int	printdata(const char *str, va_list arg)
 
 	list = str_tolst(str, arg);
 	if (!list)
-<<<<<<< HEAD
-	{
-		ft_putstr(ERROR_BDA);
-		return (ft_strlen(ERROR_BDA));
-	}
-=======
 		return (-1);
->>>>>>> main
 	tmp = list;
 	count = 0;
 	while (tmp)
 	{
-<<<<<<< HEAD
-		ft_putstr(((t_data *)tmp->content)->str);
-		count += ft_strlen(((t_data *)tmp->content)->str);
-		count += ((t_data *)tmp->content)->countZerro;
-=======
 		if (((t_data *)tmp->content)->countzerro != 0)
 		{
 			count += printch(tmp->content);
@@ -132,7 +102,6 @@ int	printdata(const char *str, va_list arg)
 		ft_putstr(((t_data *)tmp->content)->str);
 		count += ft_strlen(((t_data *)tmp->content)->str);
 		count += ((t_data *)tmp->content)->countzerro;
->>>>>>> main
 		tmp = tmp->next;
 	}
 	ft_lstclear(&list, &delt_data);

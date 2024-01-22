@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_data.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 16:57:38 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:12:47 by polenyc          ###   ########.fr       */
-=======
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:57:38 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/12 13:54:23 by polenyc          ###   ########.fr       */
->>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +29,6 @@ t_data	*t_datacrt(char *str, int countzerro)
 	if (!data)
 		return (NULL);
 	data->str = str;
-<<<<<<< HEAD
-	data->countZerro = countzerro;
-=======
 	data->countzerro = countzerro;
->>>>>>> main
 	return (data);
 }
