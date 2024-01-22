@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 12:34:41 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/01/22 14:10:20 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_data	*setdata(t_list *list, char *s)
 	while (list)
 	{
 		count += ((t_data *)(list->content))->countzerro;
-		ft_strcpy(data->str, ((t_data *)(list->content))->str);
+		ft_strcpy_tend(data->str, ((t_data *)(list->content))->str);
 		list = list->next;
 	}
 	data->countzerro = count;

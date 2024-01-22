@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_addfunc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:29:49 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 18:08:52 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/01/22 14:10:18 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlen_wch(const char *str, char end, const char ch)
 	return (count);
 }
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy_tend(char *dest, const char *src)
 {
 	char	*data;
 

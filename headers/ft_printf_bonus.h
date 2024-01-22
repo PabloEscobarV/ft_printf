@@ -6,7 +6,7 @@
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 16:01:52 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/01/22 14:08:38 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ t_data		*chartostr(const char ch, const char *spec);
 t_data		*tostr_mod(const char *str, const char *spec);
 t_data		*ft_strdup_wch(const char *src, char dev);
 char		*strjoinfree(char *s1, char *s2, int pos);
-char		*ft_strcpy(char *dest, const char *src);
+char		*ft_strcpy_tend(char *dest, const char *src);
 char		*emptystr(char ch);
 char		*modstr_crt(t_mod *mod, int size, char ch);
 t_data		*str_tostr(const char *start, const char *end, const char dev);
