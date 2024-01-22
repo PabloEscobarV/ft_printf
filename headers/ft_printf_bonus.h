@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/12 23:08:34 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
+/*   Updated: 2024/01/22 14:08:38 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +36,11 @@
 #define STR_NULL		"(null)"
 #include <stdarg.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include "libft.h"
+=======
+#include "../libft/libft.h"
+>>>>>>> main
 
 typedef unsigned int	t_ui;
 typedef unsigned long	t_ul;
@@ -42,9 +53,15 @@ typedef struct s_mod
 }			t_mod;
 typedef struct s_data
 {
+<<<<<<< HEAD
     char    *str;
     int    countZerro;
 }               t_data;
+=======
+	char	*str;
+	int		countzerro;
+}			t_data;
+>>>>>>> main
 enum
 {
 	INDENT,
@@ -75,22 +92,38 @@ t_list		*str_tolst(const char *str, va_list arg);
 void		delt_data(void *ptr);
 void		*error_memaloc(t_list *list, void (*del)(void *));
 int			printdata(const char *str, va_list arg);
+<<<<<<< HEAD
+=======
+t_data		*prcnttostr(const char *spec);
+>>>>>>> main
 //////////////////////////////////////STRING//////////////////////////////////
 t_data		*t_datacrt(char *str, int countzerro);
 t_data		*extren_return(t_data *data, t_mod *mod);
 //////////////////////////////////////STRING//////////////////////////////////
+<<<<<<< HEAD
 t_data  	*chartostr(const char ch, const char *spec);
 t_data		*tostr_mod(const char *str, const char *spec);
 t_data		*ft_strdup_wch(const char *src, char dev);
 char		*strjoinfree(char *s1, char *s2, int pos);
 char		*ft_strcpy(char *dest, const char *src);
+=======
+t_data		*chartostr(const char ch, const char *spec);
+t_data		*tostr_mod(const char *str, const char *spec);
+t_data		*ft_strdup_wch(const char *src, char dev);
+char		*strjoinfree(char *s1, char *s2, int pos);
+char		*ft_strcpy_tend(char *dest, const char *src);
+>>>>>>> main
 char		*emptystr(char ch);
 char		*modstr_crt(t_mod *mod, int size, char ch);
 t_data		*str_tostr(const char *start, const char *end, const char dev);
 t_data		*retres_fin(t_mod *mod, t_data *data, char *s1, char *s2);
 //////////////////////////////////////NUMBER//////////////////////////////////
 char		*addhexpre(const char *hex, char *str);
+<<<<<<< HEAD
 int			setsign(t_mod* mod, t_data *num);
+=======
+int			setsign(t_mod *mod, t_data *num);
+>>>>>>> main
 t_data		*int_tostr(long n, const char *spec, const char *base);
 t_data		*uint_tostr(t_ul n, const char *spec, const char *base);
 char		*uint_tostr_base(t_ul n, const char *base);
@@ -108,7 +141,10 @@ char		*intnum_mod(t_mod *mod, t_data *data, int signe, char ch);
 char		*modnstr_crt(t_mod *mod, char *str);
 //////////////////////////////////////ADRES////////////////////////////////////
 t_data		*addr_tostr(void *p, const char *spec, const char *base);
+<<<<<<< HEAD
 // char		*hex_mod(t_mod *mod, char *str, char ch);
+=======
+>>>>>>> main
 //////////////////////////////////////FIND SPEC////////////////////////////////
 const char	*findstart(const char *spc);
 size_t		count_spec(const char *str);

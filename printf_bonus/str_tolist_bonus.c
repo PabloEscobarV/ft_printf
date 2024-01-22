@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   str_tolist_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/12 12:10:14 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 12:28:20 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/20 15:22:55 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +22,10 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <limits.h>
+<<<<<<< HEAD
+=======
+#include <stdio.h>
+>>>>>>> main
 
 void	*error_memaloc(t_list *list, void (*del)(void *))
 {
@@ -25,7 +36,11 @@ void	*error_memaloc(t_list *list, void (*del)(void *))
 t_data	*write_chrs(const char *spec, va_list arg)
 {
 	if (*spec == SPEC[PRCNT])
+<<<<<<< HEAD
 		return (t_datacrt(emptystr(SPEC[PRCNT]), 0));
+=======
+		return (prcnttostr(spec));
+>>>>>>> main
 	if (*spec == SPEC[CH])
 		return (chartostr(va_arg(arg, int), spec));
 	if (*spec == SPEC[STR])

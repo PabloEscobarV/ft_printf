@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:08:05 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/12 23:09:58 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 12:08:05 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/20 18:06:09 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +48,7 @@ int	ft_printf(const char *spec, ...)
 	va_end(arg);
 	return (size);
 }
+<<<<<<< HEAD
 
 // int	main(void)
 // {
@@ -1150,3 +1158,5 @@ int	ft_printf(const char *spec, ...)
 // 	ft_printf("result size_f: %d\n", size_f);
 // 	return (0);
 // }
+=======
+>>>>>>> main

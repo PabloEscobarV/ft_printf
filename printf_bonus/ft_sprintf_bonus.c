@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprintf_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/12 23:09:24 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 12:25:39 by polenyc           #+#    #+#             */
+/*   Updated: 2024/01/22 14:10:20 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +49,19 @@ t_data	*setdata(t_list *list, char *s)
 	count = 0;
 	while (list)
 	{
+<<<<<<< HEAD
 		count += ((t_data *)(list->content))->countZerro;
 		ft_strcpy(data->str, ((t_data *)(list->content))->str);
 		list = list->next;
 	}
 	data->countZerro = count;
+=======
+		count += ((t_data *)(list->content))->countzerro;
+		ft_strcpy_tend(data->str, ((t_data *)(list->content))->str);
+		list = list->next;
+	}
+	data->countzerro = count;
+>>>>>>> main
 	return (data);
 }
 
@@ -67,9 +82,15 @@ t_data	*lst_tostr(const char *str, va_list arg)
 
 int	printch(t_data *data)
 {
+<<<<<<< HEAD
 	if (data->countZerro == 0)
 		return (0);
 	if (data->countZerro > 0)
+=======
+	if (data->countzerro == 0)
+		return (0);
+	if (data->countzerro > 0)
+>>>>>>> main
 	{
 		ft_putstr(data->str);
 		ft_putchar('\0');
@@ -93,15 +114,25 @@ int	printdata(const char *str, va_list arg)
 	count = 0;
 	while (tmp)
 	{
+<<<<<<< HEAD
 		if (((t_data *)tmp->content)->countZerro != 0)
 		{
 			count += printch(tmp->content);\
+=======
+		if (((t_data *)tmp->content)->countzerro != 0)
+		{
+			count += printch(tmp->content);
+>>>>>>> main
 			tmp = tmp->next;
 			continue ;
 		}
 		ft_putstr(((t_data *)tmp->content)->str);
 		count += ft_strlen(((t_data *)tmp->content)->str);
+<<<<<<< HEAD
 		count += ((t_data *)tmp->content)->countZerro;
+=======
+		count += ((t_data *)tmp->content)->countzerro;
+>>>>>>> main
 		tmp = tmp->next;
 	}
 	ft_lstclear(&list, &delt_data);

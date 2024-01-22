@@ -3,16 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
+<<<<<<< HEAD
 #    By: polenyc <polenyc@student.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
 #    Updated: 2023/12/10 18:19:33 by polenyc          ###   ########.fr        #
+=======
+#    By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
+#    Updated: 2024/01/22 14:16:05 by polenyc          ###   ########.fr        #
+>>>>>>> main
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
+<<<<<<< HEAD
 LIBFT_DIR = libft_modul
+=======
+LIBFT_DIR = libft
+>>>>>>> main
 LIBFT = libft.a
 
 HEADERS_DIR = headers
@@ -21,13 +32,21 @@ HEADERS = -I$(HEADERS_DIR)
 
 FILES = ft_printf.c ft_sprintf.c inttostr.c floattostr.c strtostr.c\
 	adrtostr.c hextostr.c numtostr.c str_addfunc.c str_tolist.c findspec.c\
+<<<<<<< HEAD
 	add_func.c uinttostr.c t_data.c chartostr.c\
+=======
+	add_func.c uinttostr.c t_data.c chartostr.c  prcnttostr.c\
+>>>>>>> main
 
 FILES_BONUS = ft_printf_bonus.c ft_sprintf_bonus.c inttostr_bonus.c\
 	floattostr_bonus.c strtostr_bonus.c adrtostr_bonus.c hextostr_bonus.c\
 	numtostr_bonus.c str_addfunc_bonus.c str_tolist_bonus.c findspec_bonus.c\
 	add_fun_bonus.c uinttostr_bonus.c setflags_bonus.c t_data_bonus.c\
+<<<<<<< HEAD
 	chartostr_bonus.c\
+=======
+	chartostr_bonus.c prcnttostr_bonus.c\
+>>>>>>> main
 
 OBJ_DIR = objs
 OBJ_DIR_BONUS = objs_bonus

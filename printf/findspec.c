@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   findspec.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:12:38 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/11 15:45:58 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 13:12:38 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/12 14:41:44 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +73,10 @@ const char	*find_spec(const char *str)
 	return (NULL);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 size_t	count_spec(const char *str)
 {
 	const char	*s_pos;

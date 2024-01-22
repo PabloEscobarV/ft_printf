@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 [submodule "libft_modul"]
 	path = libft_modul
+=======
+[submodule "libft"]
+	path = libft
+>>>>>>> main
 	url = git@github.com:PabloEcsobar/libft.git

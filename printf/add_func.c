@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   add_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/10 19:14:16 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/12 14:41:29 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +70,7 @@ void	swap_sign(t_mod *mod, char *str, char *num, char *ch_orig)
 	}
 	free(ch_orig);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main

@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   adrtostr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
 /*   Updated: 2023/12/11 15:42:15 by polenyc          ###   ########.fr       */
+=======
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/20 18:10:26 by polenyc          ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,23 +82,41 @@ t_data	*addr_tostr(void *p, const char *spec, const char *base)
 	char	*tmp;
 	char	*num_orig;
 
+<<<<<<< HEAD
 	if (!(uintptr_t)p)
 		return (t_datacrt(ft_strdup("(nil)"), 0));
+=======
+>>>>>>> main
 	num = t_datacrt(uint_tostr_base((uintptr_t)p, base), 0);
 	if (!num)
 		return (NULL);
 	mod = setmod(spec, MOD, SPEC);
 	if (!mod)
 		return (NULL);
+<<<<<<< HEAD
 	num->str = intnum_mod(mod, num, setsign(mod, num), '0');
+=======
+	num->str = intnum_mod(mod, num, 0, '0');
+>>>>>>> main
 	if (!num->str)
 		return (NULL);
 	num_orig = ft_strdup(num->str);
 	num->str = addhexpre(PRE_HEX_S, num->str);
 	tmp = modnstr_crt(mod, num->str);
+<<<<<<< HEAD
+=======
+	if (!tmp)
+		return (NULL);
+>>>>>>> main
 	swap_sign(mod, tmp, num->str, num_orig);
 	free(num_orig);
 	if (mod->flags[INDENT] == MOD[INDENT])
 		return (retres_fin(mod, num, num->str, tmp));
 	return (retres_fin(mod, num, tmp, num->str));
 }
+<<<<<<< HEAD
+=======
+
+	// if (!(uintptr_t)p)
+	// 	return (t_datacrt(ft_strdup("(nil)"), 0));
+>>>>>>> main
