@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_fun_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:14:28 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 17:48:54 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:55:29 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ const char	*findstart(const char *spc)
 t_data	*retres_fin(t_mod *mod, t_data *data, char *s1, char *s2)
 {
 	modfree(mod);
-	data->str = strjoinfree(s1, s2, 2);
+	data->str = ft_strjoinfree(s1, s2, 2);
 	return (data);
 }
 

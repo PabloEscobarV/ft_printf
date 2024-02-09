@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hextostr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:02:30 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 18:04:31 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:56:14 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*hexint_mod(t_mod *mod, char *str, const char *base, const char *p_h)
 		return (str);
 	if (!ft_atoi_base(str, base))
 		return (str);
-	return (strjoinfree((char *)p_h, str, 1));
+	return (ft_strjoinfree((char *)p_h, str, 1));
 }
 
 void	swap_hex(t_mod *mod, char *str, char *num, char *ch_orig)

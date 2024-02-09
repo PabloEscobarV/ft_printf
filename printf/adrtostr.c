@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adrtostr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:55:45 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/12 13:59:58 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:55:14 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 char	*addhexpre(const char *hex, char *str)
 {
-	return (strjoinfree((char *)hex, str, 1));
+	return (ft_strjoinfree((char *)hex, str, 1));
 }
 
 t_data	*addr_tostr(void *p, const char *spec, const char *base)

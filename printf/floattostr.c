@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floattostr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/10 19:11:51 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:55:16 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*float_tostr_base(double n, const char *base, t_ui maxn)
 	if (tmp < 0)
 		tmp *= -1;
 	p_float(tmp, base, num_float + 1, maxn);
-	return (strjoinfree(num_int, num_float, 2));
+	return (ft_strjoinfree(num_int, num_float, 2));
 }
 
 t_data	*float_tostr(double n, const char *spec, const char *base, t_ui m)

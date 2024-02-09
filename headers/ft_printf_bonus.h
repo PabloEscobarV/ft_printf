@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:10 by polenyc           #+#    #+#             */
-/*   Updated: 2024/01/22 15:24:17 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:57:59 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ t_data		*extren_return(t_data *data, t_mod *mod);
 t_data		*chartostr(const char ch, const char *spec);
 t_data		*tostr_mod(const char *str, const char *spec);
 t_data		*ft_strdup_wch(const char *src, char dev);
-char		*strjoinfree(char *s1, char *s2, int pos);
 char		*ft_strcpy_toend(char *dest, const char *src);
 char		*emptystr(char ch);
 char		*modstr_crt(t_mod *mod, int size, char ch);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inttostr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:41:52 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 16:02:13 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/09 20:56:34 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int	setsign(t_mod *mod, t_data *num)
 		return (signe);
 	if (mod->flags[SIGN])
 	{
-		num->str = strjoinfree(emptystr(mod->flags[SIGN]), num->str, 2);
+		num->str = ft_strjoinfree(emptystr(mod->flags[SIGN]), num->str, 2);
 		return (++signe);
 	}
-	num->str = strjoinfree(emptystr(mod->flags[SPACE]), num->str, 2);
+	num->str = ft_strjoinfree(emptystr(mod->flags[SPACE]), num->str, 2);
 	return (++signe);
 }
 
@@ -88,7 +88,7 @@ char	*intnum_mod(t_mod *mod, t_data *data, int signe, char ch)
 	ft_memset(tmp, ch, mod->precision - size);
 	if (signe)
 		swap(tmp, data->str);
-	return (strjoinfree(tmp, data->str, 2));
+	return (ft_strjoinfree(tmp, data->str, 2));
 }
 
 t_data	*int_tostr(long n, const char *spec, const char *base)
