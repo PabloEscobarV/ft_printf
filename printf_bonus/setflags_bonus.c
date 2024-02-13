@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setflags_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:45:12 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/20 17:57:18 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/02/13 20:10:37 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_mod	*modcrt(const char *flags)
 	t_mod	*mod;
 	t_ui	size;
 
-	mod = malloc(sizeof(mod));
+	mod = malloc(sizeof(t_mod));
 	if (!mod)
 		return (NULL);
 	size = ft_strlen(flags);
