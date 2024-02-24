@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+         #
+#    By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
-#    Updated: 2023/12/12 15:17:23 by polenyc          ###   ########.fr        #
+#    Updated: 2024/02/23 17:03:46 by blackrider       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,22 +19,12 @@ HEADERS_DIR = headers
 
 HEADERS = -I$(HEADERS_DIR)
 
-FILES = ft_printf.c ft_sprintf.c inttostr.c floattostr.c strtostr.c\
-	adrtostr.c hextostr.c numtostr.c str_addfunc.c str_tolist.c findspec.c\
-	add_func.c uinttostr.c t_data.c chartostr.c  prcnttostr.c\
-
-FILES_BONUS = ft_printf_bonus.c ft_sprintf_bonus.c inttostr_bonus.c\
-	floattostr_bonus.c strtostr_bonus.c adrtostr_bonus.c hextostr_bonus.c\
-	numtostr_bonus.c str_addfunc_bonus.c str_tolist_bonus.c findspec_bonus.c\
-	add_fun_bonus.c uinttostr_bonus.c setflags_bonus.c t_data_bonus.c\
-	chartostr_bonus.c prcnttostr_bonus.c\
-
 OBJ_DIR = objs
 OBJ_DIR_BONUS = objs_bonus
 SRC_DIR = printf
 SRC_DIR_BONUS = printf_bonus
-SRC = $(addprefix $(SRC_DIR)/, $(FILES))
-SRC_BONUS = $(addprefix $(SRC_DIR_BONUS)/, $(FILES_BONUS))
+SRC := $(wildcard $(SRC_DIR)/*.c)
+SRC_BONUS := $(wildcard $(SRC_DIR_BONUS)/*.c)
 OBJECTS = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 OBJECTS_BONUS = $(SRC_BONUS:$(SRC_DIR_BONUS)/%.c=$(OBJ_DIR_BONUS)/%.o)
 CC = gcc
