@@ -6,7 +6,7 @@
 #    By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
-#    Updated: 2024/02/23 17:03:46 by blackrider       ###   ########.fr        #
+#    Updated: 2024/02/28 17:04:22 by blackrider       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ CFLAGSO = -c -Wall -Wextra -Werror
 
 all: $(NAME)
 	
-
 $(NAME): $(OBJECTS) $(LIBFT)
 	cp $(LIBFT_DIR)/$(LIBFT) ./
 	mv libft.a $(NAME)
@@ -46,8 +45,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGSO) $(HEADERS) $< -o $@
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR) re
-	$(MAKE) -C $(LIBFT_DIR) bonus
+	$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -59,7 +57,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: fclean $(OBJECTS_BONUS) $(LIBFT)
+bonus: $(OBJECTS_BONUS) $(LIBFT)
 	cp $(LIBFT_DIR)/$(LIBFT) ./
 	mv libft.a $(NAME)
 	ar rc $(NAME) $(OBJECTS_BONUS)
