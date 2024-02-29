@@ -6,7 +6,7 @@
 #    By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 13:57:24 by polenyc           #+#    #+#              #
-#    Updated: 2024/02/28 18:20:50 by blackrider       ###   ########.fr        #
+#    Updated: 2024/02/29 10:00:14 by blackrider       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ re: fclean all
 re_bonus: fclean bonus
 
 $(NAME): $(OBJECTS)
-	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(LIBFT_DIR) bonus
 	ar rc $(NAME) $(OBJECTS) $(LIBFTOBJDIR)/*.o
 	ranlib $(NAME)
 
@@ -63,7 +63,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGSO) $(HEADERS) $< -o $@
 
 $(BONUSNAME): $(OBJECTS_BONUS)
-	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(LIBFT_DIR) bonus
 	ar rc $(BONUSNAME) $(OBJECTS_BONUS) $(LIBFTOBJDIR)/*.o
 	ranlib $(BONUSNAME)
 
